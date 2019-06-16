@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="post"
+            type="com.example.androidtest.vo.Post" />
+    </data>
 
     <com.balysv.materialripple.MaterialRippleLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -23,6 +30,7 @@
                 android:layout_marginLeft="@dimen/spacing_large"
                 android:layout_marginTop="@dimen/spacing_middle"
                 android:layout_marginRight="@dimen/spacing_large"
+                app:imageUrl="@{post.userId}"
                 tools:ignore="ContentDescription"
                 tools:srcCompat="@tools:sample/avatars[0]" />
 
@@ -48,6 +56,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="@dimen/spacing_middle"
                         android:layout_marginRight="@dimen/spacing_middle"
+                        android:text="Yordan"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         android:textColor="@color/grey_90"
                         tools:text="People Name" />
@@ -59,11 +68,12 @@
                         android:layout_marginTop="@dimen/spacing_medium"
                         android:layout_marginEnd="@dimen/spacing_middle"
                         android:layout_marginRight="@dimen/spacing_middle"
+                        android:ellipsize="end"
                         android:maxLines="2"
-                        android:text="@string/middle_lorem_ipsum"
-
+                        android:text="@{post.title}"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                        android:textColor="@color/grey_40" />
+                        android:textColor="@color/grey_40"
+                        tools:text="@string/middle_lorem_ipsum" />
 
                 </LinearLayout>
 
