@@ -21,7 +21,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    
+
     dataBinding {
         enabled = true
     }
@@ -37,6 +37,7 @@ dependencies {
 
     // Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
 
     // Lifecycle
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
@@ -69,7 +70,8 @@ dependencies {
     kapt "com.github.bumptech.glide:compiler:$glide_version"
 
     // third party dependencies
-    implementation 'com.balysv:material-ripple:1.0.2'
+    implementation 'com.balysv:material-ripple:1.0.2'                  // ripple effect
+    implementation 'com.mikhaellopez:circularimageview:3.2.0'          // circle image view
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'

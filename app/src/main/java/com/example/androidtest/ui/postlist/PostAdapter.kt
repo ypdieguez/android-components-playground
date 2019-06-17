@@ -1,7 +1,8 @@
-package com.example.androidtest.ui.post
+package com.example.androidtest.ui.postlist
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -19,8 +20,16 @@ class PostAdapter : ListAdapter<Post,PostAdapter.ViewHolder>(PostDiffCallback())
     }
 
     class ViewHolder(private val binding: ItemPostBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bind(post: Post) {
-            binding.post = post
+        fun bind(item: Post) {
+            binding.apply {
+                post = item
+                postView.setOnClickListener {
+                    val dir = PostListFragmentDirections
+                        .actionPostListFragmentToPostDetailFragment(item.id, item.userId, item)
+                    it.findNavController().navigate(dir)
+                }
+            }
+
         }
     }
 }

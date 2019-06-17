@@ -10,6 +10,7 @@
 
     <com.balysv.materialripple.MaterialRippleLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/post_view"
         style="@style/RippleStyleBlack"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -25,8 +26,8 @@
 
             <ImageView
                 android:id="@+id/image"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
                 android:layout_marginLeft="@dimen/spacing_large"
                 android:layout_marginTop="@dimen/spacing_middle"
                 android:layout_marginRight="@dimen/spacing_large"
@@ -51,18 +52,18 @@
                     android:paddingBottom="@dimen/spacing_middle">
 
                     <TextView
-                        android:id="@+id/name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="@dimen/spacing_middle"
                         android:layout_marginRight="@dimen/spacing_middle"
-                        android:text="Yordan"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="@{post.title}"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         android:textColor="@color/grey_90"
-                        tools:text="People Name" />
+                        tools:text="@string/short_lorem_ipsum" />
 
                     <TextView
-                        android:id="@+id/description"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/spacing_medium"
@@ -70,10 +71,10 @@
                         android:layout_marginRight="@dimen/spacing_middle"
                         android:ellipsize="end"
                         android:maxLines="2"
-                        android:text="@{post.title}"
+                        android:text="@{post.body}"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small"
                         android:textColor="@color/grey_40"
-                        tools:text="@string/middle_lorem_ipsum" />
+                        tools:text="@string/long_lorem_ipsum" />
 
                 </LinearLayout>
 

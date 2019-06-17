@@ -16,7 +16,6 @@
 
 package com.example.androidtest.binding
 
-import android.view.View
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
@@ -26,11 +25,6 @@ import com.example.androidtest.R
 /**
  * Data Binding adapters specific to the app.
  */
-@BindingAdapter("visibleGone")
-fun showHide(view: View, show: Boolean) {
-    view.visibility = if (show) View.VISIBLE else View.GONE
-}
-
 @BindingAdapter("imageUrl")
 fun bindImage(imageView: ImageView, userId: Int) {
     Glide

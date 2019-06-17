@@ -3,10 +3,29 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    app:startDestination="@id/postFragment">
+    app:startDestination="@id/postListFragment">
     <fragment
-        android:id="@+id/postFragment"
-        android:name="com.example.androidtest.ui.post.PostFragment"
-        android:label="post_fragment"
-        tools:layout="@layout/fragment_post" />
+        android:id="@+id/postListFragment"
+        android:name="com.example.androidtest.ui.postlist.PostListFragment"
+        android:label="Posts"
+        tools:layout="@layout/fragment_post_list" >
+        <action
+            android:id="@+id/action_postListFragment_to_postDetailFragment"
+            app:destination="@id/postDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postDetailFragment"
+        android:name="com.example.androidtest.ui.postdetail.PostDetailFragment"
+        android:label="Read"
+        tools:layout="@layout/fragment_post_detail">
+        <argument
+            android:name="postId"
+            app:argType="integer" />
+        <argument
+            android:name="userId"
+            app:argType="integer" />
+        <argument
+            android:name="post"
+            app:argType="com.example.androidtest.vo.Post" />
+    </fragment>
 </navigation>

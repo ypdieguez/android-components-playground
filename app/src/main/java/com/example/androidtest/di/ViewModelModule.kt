@@ -19,7 +19,7 @@ package com.example.androidtest.di
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
-import com.example.androidtest.ui.post.PostViewModel
+import com.example.androidtest.ui.common.PostViewModel
 import com.example.androidtest.viewmodel.AppViewModelFactory
 
 import dagger.Binds

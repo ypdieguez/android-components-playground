@@ -16,10 +16,10 @@ class PostRepository @Inject constructor(
     private val jsonPlaceholderService: JSONPlaceholderService
 ) {
 
-    fun loadRepos(): LiveData<Resource<List<Post>>> {
+    fun loadPosts(): LiveData<Resource<List<Post>>> {
         return object : NetworkBoundResource<List<Post>, List<Post>>(appExecutors) {
             override fun saveCallResult(item: List<Post>) {
-                postDao.insertPosts(item)
+                postDao.insert(item)
             }
 
             override fun shouldFetch(data: List<Post>?): Boolean {
@@ -32,5 +32,4 @@ class PostRepository @Inject constructor(
 
         }.asLiveData()
     }
-
 }

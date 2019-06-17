@@ -5,13 +5,13 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.androidtest.vo.Post
+import com.example.androidtest.vo.Comment
 
 @Dao
-interface PostDao {
+interface CommentDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(posts: List<Post>)
+    fun insert(comments: List<Comment>)
 
-    @Query("SELECT * FROM posts")
-    fun loadPosts(): LiveData<List<Post>>
+    @Query("SELECT * FROM comments WHERE postId = :postId")
+    fun getComments(postId: Int): LiveData<List<Comment>>
 }
